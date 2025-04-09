@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edna Iusupova – Web Developer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Edna Iusupova</h1>
+      <p class="hero-subtitle">Functional Analyst → Web Developer</p>
+      <a href="#portfolio" class="cta-button">View Portfolio</a>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+    <div class="lang-switch">
+      <button onclick="setLang('en')">EN</button> | 
+      <button onclick="setLang('ru')">RU</button>
+    </div>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2 data-en="About Me" data-ru="Обо мне"></h2>
+      <p data-en="Functional Analyst with 2+ years of experience in process automation, transitioning into full-stack web development." 
+         data-ru="Системный аналитик с более чем 2 годами опыта, перехожу в веб-разработку.">
+      </p>
+    </section>
+
+    <section id="portfolio">
+      <h2 data-en="Portfolio" data-ru="Портфолио"></h2>
+      <div class="projects">
+        <div class="project">
+          <h3 data-en="Risk Assessment Web App" data-ru="Приложение для оценки рисков"></h3>
+          <p data-en="Multi-tenant app built on Azure with REST APIs." 
+             data-ru="Многопользовательское приложение на Azure, REST API."></p>
+        </div>
+        <div class="project">
+          <h3 data-en="SQL Analyzer Tool" data-ru="SQL Анализатор"></h3>
+          <p data-en="Tool for building and analyzing SQL queries." 
+             data-ru="Инструмент для построения и анализа SQL-запросов."></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 data-en="Contact" data-ru="Контакты"></h2>
+      <p>Email: <a href="mailto:yusupovaedna@gmail.com">yusupovaedna@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/ednaiu" target="_blank">linkedin.com/in/ednaiu</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Edna Iusupova</p>
+  </footer>
+
+  <script src="lang.js"></script>
+</body>
+</html>
