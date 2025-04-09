@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edna Iusupova | Web Developer & Analyst</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 id="name">Edna Iusupova</h1>
+      <p id="tagline">Functional Analyst & Aspiring Web Developer</p>
+      <nav>
+        <a href="#about" onclick="setLang('en')">EN</a> | 
+        <a href="#about" onclick="setLang('ru')">RU</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2 data-en="About Me" data-ru="Обо мне"></h2>
+        <p data-en="I’m a functional analyst with over 2 years of experience in business process automation and integration of IT solutions. I am transitioning to full-stack web development and have experience building a multi-tenant risk assessment app using Azure and REST APIs." 
+           data-ru="Я системный аналитик с более чем 2 годами опыта в автоматизации бизнес-процессов и интеграции ИТ-решений. Сейчас перехожу в веб-разработку и уже имею опыт создания многопользовательского приложения для оценки рисков на Azure с использованием REST API.">
+        </p>
+      </section>
+
+      <section id="portfolio">
+        <h2 data-en="Portfolio" data-ru="Портфолио"></h2>
+        <ul>
+          <li data-en="Risk Assessment Web App (Azure, JS, REST API)" data-ru="Веб-приложение для оценки рисков (Azure, JS, REST API)"></li>
+          <li data-en="SQL Query Analyzer (Pet Project)" data-ru="SQL Query Analyzer (Pet-проект)"></li>
+        </ul>
+      </section>
+
+      <section id="contact">
+        <h2 data-en="Contact" data-ru="Контакты"></h2>
+        <p>Email: <a href="mailto:yusupovaedna@gmail.com">yusupovaedna@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/ednaiu" target="_blank">linkedin.com/in/ednaiu</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Edna Iusupova</p>
+    </footer>
+  </div>
+
+  <script src="lang.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+  color: #333;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+header, footer {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+nav a {
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+h2 {
+  margin-top: 2rem;
+}
