@@ -1,0 +1,19 @@
+{
+  "name": "edna-portfolio-site",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "https://your-github-username.github.io/edna-portfolio-site",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.12.1",
+    "react-scripts": "5.0.1",
+    "tailwindcss": "^3.3.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  }
+}
