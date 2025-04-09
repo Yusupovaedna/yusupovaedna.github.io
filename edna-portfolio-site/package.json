@@ -2,7 +2,7 @@
   "name": "edna-portfolio-site",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://your-github-username.github.io/edna-portfolio-site",
+  "homepage": "https://yusupovaedna.github.io/edna-portfolio-site",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
