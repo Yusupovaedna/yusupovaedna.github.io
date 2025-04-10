@@ -1,3 +1,5 @@
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -12,7 +14,7 @@
 
   <main>
     <section class="project-detail">
-      <img id="project-image" src="" alt="Project image"/>
+      <div id="project-gallery" class="image-gallery"></div>
       <p id="project-desc">Loading...</p>
       <a href="index.html" class="back-link">← Back to portfolio</a>
     </section>
@@ -29,20 +31,28 @@
     const projects = {
       'risk-app': {
         title: 'Risk Assessment Web App',
-        image: 'images/1.png',
+        images: ['images/risk-app-1.jpg', 'images/risk-app-2.jpg'],
         desc: 'Multi-tenant risk assessment tool built with Azure and REST API integration.'
       },
       'sql-tool': {
         title: 'SQL Analyzer Tool',
-        image: 'images/2.png',
+        images: ['images/1.png', 'images/2.png'],
         desc: 'A tool for building, analyzing and optimizing SQL queries for large databases.'
       }
     };
 
     if (projects[id]) {
-      document.getElementById('project-title').innerText = projects[id].title;
-      document.getElementById('project-image').src = projects[id].image;
-      document.getElementById('project-desc').innerText = projects[id].desc;
+      const project = projects[id];
+      document.getElementById('project-title').innerText = project.title;
+      document.getElementById('project-desc').innerText = project.desc;
+
+      const gallery = document.getElementById('project-gallery');
+      project.images.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = project.title;
+        gallery.appendChild(img);
+      });
     }
   </script>
 </body>
