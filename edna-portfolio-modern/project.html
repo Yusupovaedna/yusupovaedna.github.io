@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +19,11 @@
     </section>
   </main>
 
+  <div id="lightbox" class="lightbox hidden">
+    <span class="close-btn" onclick="closeLightbox()">×</span>
+    <img id="lightbox-img" src="" alt="Zoomed image">
+  </div>
+
   <footer>
     <p>&copy; 2025 Edna Iusupova</p>
   </footer>
@@ -36,11 +40,19 @@
       },
       'sql-tool': {
         title: 'SQL Analyzer Tool',
-         images: ['images/1.png', 'images/2.png', 'images/3.png', 'images/4.png'],
+        images: ['images/1.png', 'images/2.png', 'images/3.png', 'images/4.png'],
         desc: 'A tool for building, analyzing and optimizing SQL queries for large databases.'
-       
       }
     };
+
+    function showLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.add('hidden');
+    }
 
     if (projects[id]) {
       const project = projects[id];
@@ -52,6 +64,7 @@
         const img = document.createElement('img');
         img.src = src;
         img.alt = project.title;
+        img.onclick = () => showLightbox(src);
         gallery.appendChild(img);
       });
     }
