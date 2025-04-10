@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +14,8 @@
   </header>
 
   <main>
+    <section id="project-description" class="project-description"></section>
+
     <section class="project-detail">
       <div id="project-gallery" class="image-gallery"></div>
       <p id="project-desc">Loading...</p>
@@ -34,22 +37,27 @@
     const id = params.get('id');
 
     const projects = {
-      'risk-app': {
-        title: 'Risk Assessment Web App',
-        desc: 'Multi-tenant risk assessment tool built with Azure and REST API integration.',
+      'demo': {
+        title: 'TalkMate – AI-ассистент',
+        desc: 'Инструмент для анализа речи и развития навыков публичных выступлений',
+        description: `
+          <h2>TalkMate – AI-ассистент для развития навыков публичных выступлений</h2>
+          <p><strong>Описание проекта:</strong><br>
+          TalkMate — это мобильное приложение, предназначенное для тренировки и диагностики коммуникативных навыков.</p>
+          <p><strong>Функционал:</strong></p>
+          <ul>
+            <li>Запись и распознавание речи с использованием Yandex SpeechKit и нейросетей</li>
+            <li>Анализ речи: скорость, громкость, монотонность, эмоциональность, заполнители</li>
+            <li>Генерация рекомендаций, статистика и прогресс</li>
+            <li>База обучающих статей</li>
+          </ul>
+          <p><strong>Технологии:</strong> Python, PyTorch, Kotlin, Flask, WavLM, MPAndroidChart</p>
+        `,
         images: [
-          { src: 'images/risk-app-1.jpg', caption: 'Dashboard overview of risk categories' },
-          { src: 'images/risk-app-2.jpg', caption: 'Detailed analytics with user roles' }
-        ]
-      },
-      'sql-tool': {
-        title: 'Talk Mate',
-        desc: 'A tool for building, analyzing and optimizing SQL queries for large databases.',
-        images: [
-          { src: 'images/1.png', caption: 'Верхнеуровневое проектирование' },
-          { src: 'images/2.png', caption: 'Алгоритм анализа речи' },
-          { src: 'images/3.png', caption: 'Данные о модели' },
-          { src: 'images/4.png', caption: 'Демо' }
+          { src: 'images/1.png', caption: 'Главный экран приложения' },
+          { src: 'images/2.png', caption: 'Анализ речи пользователя' },
+          { src: 'images/3.png', caption: 'Рекомендации по улучшению речи' },
+          { src: 'images/4.png', caption: 'Просмотр статистики и динамики' }
         ]
       }
     };
@@ -67,6 +75,7 @@
       const project = projects[id];
       document.getElementById('project-title').innerText = project.title;
       document.getElementById('project-desc').innerText = project.desc;
+      document.getElementById('project-description').innerHTML = project.description;
 
       const gallery = document.getElementById('project-gallery');
       project.images.forEach(imgObj => {
