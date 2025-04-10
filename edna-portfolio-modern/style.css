@@ -1,58 +1,98 @@
-body {
-  font-family: sans-serif;
-  margin: 0;
-  background: #f5f5f5;
-  color: #333;
+
+:root {
+  --primary-color: #00adb5;
+  --bg-light: #f5f5f5;
+  --bg-dark: #393e46;
+  --text-color: #333;
+  --text-light: #fff;
 }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: var(--bg-light);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
 .hero {
-  background: #393e46;
-  color: #fff;
-  padding: 2rem;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  padding: 3rem 2rem;
   text-align: center;
 }
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
+
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
   padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
 .project-tile {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
   color: inherit;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   overflow: hidden;
-  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
 }
+
 .project-tile:hover {
-  transform: scale(1.02);
+  transform: translateY(-5px);
 }
+
 .project-tile img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
 }
+
 .project-tile h2 {
   padding: 1rem;
   font-size: 1.1rem;
+  text-align: center;
 }
+
 .project-detail {
+  display: grid;
+  grid-template-columns: 1fr;
   padding: 2rem;
-  max-width: 800px;
-  margin: auto;
+  max-width: 960px;
+  margin: 0 auto;
 }
+
 .project-detail img {
   width: 100%;
-  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
   margin-bottom: 1rem;
 }
+
 .back-link {
   display: inline-block;
   margin-top: 2rem;
   text-decoration: none;
-  color: #00adb5;
+  color: var(--primary-color);
 }
+
 footer {
   text-align: center;
   padding: 1rem;
@@ -60,28 +100,18 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Ограничим ширину изображений в проекте */
-.project-detail img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto 1rem auto;
-}
-
-/* Адаптивность для маленьких экранов */
-@media (max-width: 600px) {
-  .hero {
-    padding: 1.5rem;
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
   }
 
-  .project-tile h2 {
+  .hero p {
     font-size: 1rem;
   }
 
   .projects-grid {
+    grid-template-columns: 1fr;
     padding: 1rem;
-    gap: 0.75rem;
   }
 
   .project-detail {
