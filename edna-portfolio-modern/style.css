@@ -69,22 +69,8 @@ body {
   text-align: center;
 }
 
-.project-detail {
-  display: grid;
-  grid-template-columns: 1fr;
-  padding: 2rem;
-  max-width: 960px;
-  margin: 0 auto;
-}
 
-.project-detail img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
+
 
 .back-link {
   display: inline-block;
