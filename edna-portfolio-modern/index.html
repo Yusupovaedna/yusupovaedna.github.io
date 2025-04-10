@@ -16,9 +16,11 @@
   </header>
 
   <nav class="navbar">
-    <a href="#about">About</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
     <div class="lang-switch">
       <button onclick="setLang('en')">EN</button> | 
       <button onclick="setLang('ru')">RU</button>
@@ -37,14 +39,20 @@
       <h2 data-en="Portfolio" data-ru="Портфолио"></h2>
       <div class="projects">
         <div class="project">
-          <h3 data-en="Risk Assessment Web App" data-ru="Приложение для оценки рисков"></h3>
-          <p data-en="Multi-tenant app built on Azure with REST APIs." 
-             data-ru="Многопользовательское приложение на Azure, REST API."></p>
+          <img src="images/risk-app.jpg" alt="Risk Assessment Web App" />
+          <div class="project-text">
+            <h3 data-en="Risk Assessment Web App" data-ru="Приложение для оценки рисков"></h3>
+            <p data-en="Multi-tenant app built on Azure with REST APIs." 
+               data-ru="Многопользовательское приложение на Azure, REST API."></p>
+          </div>
         </div>
         <div class="project">
-          <h3 data-en="SQL Analyzer Tool" data-ru="SQL Анализатор"></h3>
-          <p data-en="Tool for building and analyzing SQL queries." 
-             data-ru="Инструмент для построения и анализа SQL-запросов."></p>
+          <img src="images/1.png" alt="SQL Analyzer Tool" />
+          <div class="project-text">
+            <h3 data-en="SQL Analyzer Tool" data-ru="SQL Анализатор"></h3>
+            <p data-en="Tool for building and analyzing SQL queries." 
+               data-ru="Инструмент для построения и анализа SQL-запросов."></p>
+          </div>
         </div>
       </div>
     </section>
