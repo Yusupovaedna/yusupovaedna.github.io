@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project – Edna Iusupova</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1 id="project-title">Project</h1>
+  </header>
+
+  <main>
+    <section class="project-detail">
+      <img id="project-image" src="" alt="Project image"/>
+      <p id="project-desc">Loading...</p>
+      <a href="index.html" class="back-link">← Back to portfolio</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Edna Iusupova</p>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    const projects = {
+      'risk-app': {
+        title: 'Risk Assessment Web App',
+        image: 'images/1.png',
+        desc: 'Multi-tenant risk assessment tool built with Azure and REST API integration.'
+      },
+      'sql-tool': {
+        title: 'SQL Analyzer Tool',
+        image: 'images/2.png',
+        desc: 'A tool for building, analyzing and optimizing SQL queries for large databases.'
+      }
+    };
+
+    if (projects[id]) {
+      document.getElementById('project-title').innerText = projects[id].title;
+      document.getElementById('project-image').src = projects[id].image;
+      document.getElementById('project-desc').innerText = projects[id].desc;
+    }
+  </script>
+</body>
+</html>
