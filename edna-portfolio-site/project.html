@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project – Edna Iusupova</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1 id="project-title">Project</h1>
+  </header>
+
+  <main>
+    <section class="project-detail">
+      <div id="project-gallery" class="image-gallery"></div>
+      <p id="project-desc">Loading...</p>
+      <a href="index.html" class="back-link">← Back to portfolio</a>
+    </section>
+  </main>
+
+  <div id="lightbox" class="lightbox hidden">
+    <span class="close-btn" onclick="closeLightbox()">×</span>
+    <img id="lightbox-img" src="" alt="Zoomed image">
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Edna Iusupova</p>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    const projects = {
+      'risk-app': {
+        title: 'Risk Assessment Web App',
+        desc: 'Multi-tenant risk assessment tool built with Azure and REST API integration.',
+        images: [
+          { src: 'images/risk-app-1.jpg', caption: 'Dashboard overview of risk categories' },
+          { src: 'images/risk-app-2.jpg', caption: 'Detailed analytics with user roles' }
+        ]
+      },
+      'sql-tool': {
+        title: 'SQL Analyzer Tool',
+        desc: 'A tool for building, analyzing and optimizing SQL queries for large databases.',
+        images: [
+          { src: 'images/sql-tool-1.jpg', caption: 'Query builder interface' },
+          { src: 'images/sql-tool-2.jpg', caption: 'Query result visualizer' }
+        ]
+      }
+    };
+
+    function showLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.add('hidden');
+    }
+
+    if (projects[id]) {
+      const project = projects[id];
+      document.getElementById('project-title').innerText = project.title;
+      document.getElementById('project-desc').innerText = project.desc;
+
+      const gallery = document.getElementById('project-gallery');
+      project.images.forEach(imgObj => {
+        const wrapper = document.createElement('div');
+        wrapper.classList.add('image-caption-block');
+
+        const caption = document.createElement('p');
+        caption.classList.add('img-caption');
+        caption.innerText = imgObj.caption;
+
+        const img = document.createElement('img');
+        img.src = imgObj.src;
+        img.alt = project.title;
+        img.onclick = () => showLightbox(imgObj.src);
+
+        wrapper.appendChild(caption);
+        wrapper.appendChild(img);
+        gallery.appendChild(wrapper);
+      });
+    }
+  </script>
+</body>
+</html>
